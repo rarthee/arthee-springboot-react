@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+<div class = "container">
+    <div class = "row">
+        <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class = "text-center"> Create New Portfolio </h1>
+            <div class = "card-body">
+                <form th:action="@{/portfolios}" th:object = "${portfolios}" method="POST">
+                    <div class ="form-group">
+                        <label> Portfolio No </label>
+                        <input
+                                type = "text"
+                                name = "portfolioNo"
+                                th:field = "*{portfolioNo}"
+                                class = "form-control"
+                                placeholder="Enter Portfolio No"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Portfolio Name </label>
+                        <input
+                                type = "text"
+                                name = "portfolioName"
+                                th:field = "*{portfolioName}"
+                                class = "form-control"
+                                placeholder="Enter Portfolio Name"
+                        />
+                    </div>
+
+                    <div class ="form-group">
+                        <label> Portfolio Type </label>
+                        <input
+                                type = "text"
+                                name = "portfolioType"
+                                th:field = "*{portfolioType}"
+                                class = "form-control"
+                                placeholder="Enter Portfolio Type"
+                        />
+                    </div>
+
+                    <div class = "box-footer">
+                        <button type="submit" class = "btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
